@@ -9,6 +9,9 @@ def showHelp():
     print("   -a  Memory address")
     print("   -s  Size of memory to show")
 
+def readProcMem(p, a, s):
+    pass
+
 def getAddrFromInput(v):
     if len(v) <= 2: return int(v)
 
@@ -26,3 +29,4 @@ if __name__ == '__main__':
         if k == "-s": size = int(v)
         
     print(pid, addr, size)
+    readProcMem(pid, addr, size)
