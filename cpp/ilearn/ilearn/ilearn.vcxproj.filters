@@ -10,9 +10,11 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="shape.cpp" />
     <ClCompile Include="circle.cpp" />
+    <ClCompile Include="rect.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shape.h" />
     <ClInclude Include="circle.h" />
+    <ClInclude Include="rect.h" />
   </ItemGroup>
 </Project>

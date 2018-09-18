@@ -1,15 +1,13 @@
+
 #pragma once
 #include "shape.h"
-class circle :
+class rect :
     public shape
 {
 public:
-    circle();
-    ~circle();
+    rect();
+    ~rect();
 
     double calcArea();
-
-private:
-    int   r;
 };
 
