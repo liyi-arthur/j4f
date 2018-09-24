@@ -7,14 +7,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="shape.cpp" />
     <ClCompile Include="circle.cpp" />
     <ClCompile Include="rect.cpp" />
+    <ClCompile Include="base.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shape.h" />
     <ClInclude Include="circle.h" />
     <ClInclude Include="rect.h" />
+    <ClInclude Include="base.h" />
   </ItemGroup>
 </Project>

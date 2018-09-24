@@ -5,7 +5,7 @@ public:
     shape();
     virtual ~shape();
 
-    virtual double calcArea();
+    virtual double calcArea()=0;
 
 protected:
     int   type;
