@@ -6,8 +6,14 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ilearn", "ilearn.vcxproj", "{CD6D96A5-CAC4-4844-A476-9CB0E8DDBD5F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_ilearn", "..\test_ilearn\test_ilearn.vcxproj", "{7D21346A-9461-43EB-8601-2CCEEFAD13E8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CD6D96A5-CAC4-4844-A476-9CB0E8DDBD5F} = {CD6D96A5-CAC4-4844-A476-9CB0E8DDBD5F}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ilearn_main", "..\ilearn_main\ilearn_main.vcxproj", "{B00C0DAF-7C2B-42F9-8EC5-C981D76A5F43}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CD6D96A5-CAC4-4844-A476-9CB0E8DDBD5F} = {CD6D96A5-CAC4-4844-A476-9CB0E8DDBD5F}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

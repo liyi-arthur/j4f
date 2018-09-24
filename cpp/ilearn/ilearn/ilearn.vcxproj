@@ -152,12 +152,14 @@
   <ItemGroup>
     <ClCompile Include="base.cpp" />
     <ClCompile Include="circle.cpp" />
+    <ClCompile Include="data_structure\avl_tree\avl_tree.c" />
     <ClCompile Include="rect.cpp" />
     <ClCompile Include="shape.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="base.h" />
     <ClInclude Include="circle.h" />
+    <ClInclude Include="data_structure\avl_tree\avl_tree.h" />
     <ClInclude Include="rect.h" />
     <ClInclude Include="shape.h" />
   </ItemGroup>

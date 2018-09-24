@@ -5,17 +5,29 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="data_structure">
+      <UniqueIdentifier>{d0b1f2b2-bb30-485f-b2ec-7dc01cf08655}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data_structure\avl_tree">
+      <UniqueIdentifier>{63b89e38-9b43-43bd-970a-9ded5e7de392}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="shape.cpp" />
     <ClCompile Include="circle.cpp" />
     <ClCompile Include="rect.cpp" />
     <ClCompile Include="base.cpp" />
+    <ClCompile Include="data_structure\avl_tree\avl_tree.c">
+      <Filter>data_structure\avl_tree</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shape.h" />
     <ClInclude Include="circle.h" />
     <ClInclude Include="rect.h" />
     <ClInclude Include="base.h" />
+    <ClInclude Include="data_structure\avl_tree\avl_tree.h">
+      <Filter>data_structure\avl_tree</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
