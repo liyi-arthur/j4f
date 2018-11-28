@@ -1,0 +1,1 @@
+(($name=='tudou') || ($name == 'mantou')) && (($capacity>1000) && ($parentId==1))
