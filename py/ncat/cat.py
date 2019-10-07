@@ -2,6 +2,7 @@ import requests
 from lxml import etree
 import sys
 import os
+import time
 
 g_curdir = os.path.split(os.path.abspath(__file__))[0]
 g_outDir = os.path.join(g_curdir, "out")
@@ -12,6 +13,10 @@ def GetRequest(link, to, retries):
             return requests.get(url=link, timeout=to)
         except requests.exceptions.Timeout:
             print("Failed to get " + link + ", and retry...")
+        except requests.exceptions.ConnectionError:
+            print("Failed to get " + link + ", and retry...")
+        time.sleep(2)
+    return None
 
 # /html/body/div[5]/div/div[2]/div[2]/ul
 def GetLinks(link):
@@ -28,6 +33,7 @@ def GetLinks(link):
 
 def GetContent(link):
     r = GetRequest(link, 3, 3)
+    if r == None: return None
     print(r.encoding, r.status_code)
     beginStr = "<div class=\"content\">"
     begin = r.text.find(beginStr)
@@ -75,6 +81,7 @@ def cat(weburl, head, fname):
         link = head+l.strip()
         print(link)
         c = GetContent(link)
+        if c == None: continue
         SaveContent(l.strip(), c)
     return
 
