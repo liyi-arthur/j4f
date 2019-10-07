@@ -1,6 +1,10 @@
 import requests
 from lxml import etree
 import sys
+import os
+
+g_curdir = os.path.split(os.path.abspath(__file__))[0]
+g_outDir = os.path.join(g_curdir, "out")
 
 def GetRequest(link, to, retries):
     for i in range(0, retries):
@@ -32,9 +36,31 @@ def GetContent(link):
     # print(content)
     return content
 
+def SaveLinks(links):
+    fh = open(os.path.join(g_outDir, "links.txt"), "w")
+    for l in links:
+        fh.write(l + "\n")
+    fh.close()
+
+def GetLinksLocal():
+    if os.path.exists(g_outDir) == False:
+        os.mkdir(g_outDir)
+    linksFile = os.path.join(g_outDir, "links.txt")
+    if os.path.exists(linksFile) == False:
+        return None
+    links = []
+    fh = open(linksFile, "r")
+    for l in fh.readlines():
+        links.append(l)
+    fh.close()
+    return links
+
 def cat(link, head, fname):
     fh = open(fname, "w", encoding="gb2312", errors='ignore')
-    links = GetLinks(link)
+    links = GetLinksLocal()
+    if links == None:
+        links = GetLinks(link)
+    SaveLinks(links)
     for l in links:
         print(l)
         c = GetContent(head+l)
