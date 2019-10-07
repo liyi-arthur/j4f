@@ -55,18 +55,27 @@ def GetLinksLocal():
     fh.close()
     return links
 
-def cat(link, head, fname):
+def SaveContent(link, content):
+    fname = os.path.join(g_outDir, link.split("/")[-1])
     fh = open(fname, "w", encoding="gb2312", errors='ignore')
+    fh.write(content)
+    fh.close()
+
+def IsLinkFetched(link):
+    fname = os.path.join(g_outDir, link.split("/")[-1])
+    return os.path.exists(fname)
+
+def cat(weburl, head, fname):
     links = GetLinksLocal()
     if links == None:
-        links = GetLinks(link)
-    SaveLinks(links)
+        links = GetLinks(weburl)
+        SaveLinks(links)
     for l in links:
-        print(l)
-        c = GetContent(head+l)
-        fh.write(c)
-        fh.flush()
-    fh.close()
+        if IsLinkFetched(l.strip()): continue
+        link = head+l.strip()
+        print(link)
+        c = GetContent(link)
+        SaveContent(l.strip(), c)
     return
 
 
